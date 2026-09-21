@@ -57,7 +57,15 @@
 
 void clear_string(char s[], int n)
 {
-
+    char empty = '\0';
+    int i = 0;
+    loop:
+    if (i < n)
+    {
+        s[i] = empty;
+        i++;
+        goto loop;  
+    }
 }
 
 
@@ -121,7 +129,10 @@ int my_isupper(char c)
 
 int my_isalpha(char c)
 {
-    return 0;
+    if(my_islower(c) || my_isupper(c) )
+        return 1;
+    else
+        return 0;
 }
 
 
@@ -141,7 +152,16 @@ int my_isalpha(char c)
 
 int my_isalnum(char c)
 {
-    return 0;
+    int is_alpha = my_isalpha(c);
+    int is_digit = my_isdigit(c);
+
+    switch( is_alpha ||  is_digit )
+    {
+        case 0:
+            return 0;
+        case 1:
+            return 0;
+    }
 }
 
 
