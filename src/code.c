@@ -65,7 +65,7 @@ void clear_string(char s[], int n)
         s[i] = empty;
         i++;
         goto loop;  
-    }
+    } 
 }
 
 
